@@ -1,0 +1,232 @@
+@charset "UTF-8";
+/*                      CSS Document - Assignment 3
+                        Sierra Buckland - 200366619
+                                03/11/2020
+
+Typesetting a homepage assignment: https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Typesetting_a_homepage
+*/
+
+/* General setup */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1400px;
+}
+
+/* Layout */
+
+section {
+  float: left;
+  width: 50%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+nav {
+  float: left;
+  width: 20%;
+}
+
+footer {
+  clear: both;
+}
+
+header, section, aside, nav, footer {
+  padding: 20px;
+}
+
+/* header and footer */
+
+header, footer {
+  border-top: 5px solid	#064771;
+  border-bottom: 5px solid	#064771;
+}
+
+/* WRITE YOUR CODE BELOW HERE */
+
+/*
+abhaya: https://www.fontsquirrel.com/fonts/abhayalibre?filter%5Bclassifications%5
+D%5B0%5D=serif&filter%5Blicense%5D%5B0%5D=web
+open_sansbold: https://www.fontsquirrel.com/fontsopensans?filter%5Bclassifications%5
+D%5B0%5D=sans+serif&filter%5Blicense%5D%5B0%5D=web&filter%5Btags%5D%5B0%5D=headings
+*/
+
+@font-face { /* Serif font import for body text */
+    font-family: 'abhaya_libreregular';
+    src: url('../assets/fonts/AbhayaLibre-Regular-webfont.eot');
+    src: url('../assets/fonts/AbhayaLibre-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../assets/fonts/AbhayaLibre-Regular-webfont.woff2') format('woff2'),
+         url('../assets/fonts/AbhayaLibre-Regular-webfont.woff') format('woff'),
+         url('../assets/fonts/AbhayaLibre-Regular-webfont.ttf') format('truetype'),
+         url('../assets/fonts/AbhayaLibre-Regular-webfont.svg#abhaya_libreregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { /* Sans Serif font import for headings */
+    font-family: 'open_sansbold';
+    src: url('../assets/fonts/OpenSans-Bold-webfont.eot');
+    src: url('../assets/fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../assets/fonts/OpenSans-Bold-webfont.woff2') format('woff2'),
+         url('../assets/fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('../assets/fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('../assets/fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*------------------------------ Typography ---------------------------------*/
+html {
+  font-family: 'abhaya_libreregular', serif;
+  font-size: 10px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  word-spacing: 1rem;
+}
+
+h2 {
+  font-size: 3.6rem;
+  word-spacing: .5rem;
+}
+
+h1, h2 {
+  font-family: 'open_sansbold', sans-serif;
+  letter-spacing: .2rem;
+}
+
+/* body texts and lists */
+li,
+p {
+  font-size: 2rem;
+  line-height: 1.8; /* paragraphs and list always have same line height now */
+  letter-spacing: 0.5px;
+  word-spacing: 0.5rem;
+}
+
+/* first paragraph in each section / after each heading */
+section h2 + p {
+  text-indent: 2rem;
+}
+
+/*------------------------------ Link styling --------------------------------*/
+
+a {
+  outline: none;
+  text-decoration: underline;
+}
+
+/* challenging: inserting image and orienting it how I wanted */
+a[href*="http"] {
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+  background: url(../assets/images/external-link-52.png) center left no-repeat;
+  background-size: 15px 15px;
+}
+
+a:link {
+  color: #064771;
+  font-weight: bold;
+  /* border-bottom: 2px solid; */
+}
+
+a:visited {
+   color: #713006;
+}
+
+a:focus {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+a:hover {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+a:active {
+  background-color: rgba(113, 48, 6, 0.20);
+    border-bottom: none;
+}
+
+/*------------------------------ List Styling --------------------------------*/
+
+li {
+  list-style-type: disc;
+}
+
+ol li {
+  list-style-type: circle;
+}
+
+ul,
+ol
+{
+  /* list margin to match paragraph spacing */
+  margin: 2rem 0;
+}
+
+/*----------------------------- Navigation Menu ------------------------------*/
+
+nav ul {
+  padding-left: 0;
+  margin-top: 0.8rem;
+}
+
+nav li {
+  list-style-type: none;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+/* proud of: nav button styling (border-radius, hover effect, active state, etc) */
+nav ul li a {
+  width: 100%;
+  background: #064771;
+  border: 4px solid #064771;
+  border-radius: 50px 20px;
+  padding: 1rem;
+  font-size: 2.5rem;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 3;
+  text-align: center;
+}
+
+nav a:link {
+  color: white;
+}
+
+nav a:visited {
+   color: white;
+}
+
+nav a:focus {
+  color: white;
+  background:	#713006;
+  border: 4px solid #713006;
+  border-radius: 50px 20px;
+}
+
+nav a:hover {
+  color: white;
+  background:	#713006;
+  border: 4px solid #713006;
+  border-radius: 50px 20px;
+}
+
+nav a:active {
+  background: white;
+  border: 4px solid black;
+  color: black;
+}
